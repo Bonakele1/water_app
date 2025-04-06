@@ -1,0 +1,38 @@
+artifact_path: Random Forest
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.4.2
+is_signature_from_type_hint: false
+mlflow_version: 2.20.3
+model_size_bytes: 173847
+model_uuid: 146bd53000cd4b5193cdfe8c1ea336bb
+run_id: 30ba1dd744c7439bb55cc65c43e00544
+signature:
+  inputs: '[{"type": "double", "name": "Ambient temperature (\u00b0C)", "required":
+    true}, {"type": "double", "name": "pH", "required": true}, {"type": "double",
+    "name": "EC\n(\u00b5S/cm)", "required": true}, {"type": "double", "name": "TSS\n(mL
+    sed/L)", "required": true}, {"type": "double", "name": "DO\n(mg/L)", "required":
+    true}, {"type": "double", "name": "Level (cm)", "required": true}, {"type": "double",
+    "name": "Turbidity (NTU)", "required": true}, {"type": "double", "name": "Total
+    Cl-\n(mg Cl-/L)", "required": true}, {"type": "double", "name": "Month", "required":
+    true}, {"type": "double", "name": "Hour", "required": true}, {"type": "double",
+    "name": "Sampling point_Arroyo Salguero", "required": true}, {"type": "double",
+    "name": "Sampling point_Arroyo_Las Torres", "required": true}, {"type": "double",
+    "name": "Sampling point_Puente Bilbao", "required": true}, {"type": "double",
+    "name": "Sampling point_Puente Falbo", "required": true}, {"type": "double", "name":
+    "Sampling point_Puente Irigoyen", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int32", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-04-06 16:05:43.640244'

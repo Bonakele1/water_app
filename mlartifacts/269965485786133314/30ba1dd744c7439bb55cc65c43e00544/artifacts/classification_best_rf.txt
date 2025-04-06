@@ -1,0 +1,10 @@
+                                        precision    recall  f1-score   support
+
+      Excellent (Support Aquatic life)       1.00      1.00      1.00        15
+Good (Acceptable to some Aquatic life)       1.00      1.00      1.00        13
+                      Poor (Pollution)       1.00      0.75      0.86         8
+                   Very Poor (Hypoxic)       0.86      1.00      0.92        12
+
+                              accuracy                           0.96        48
+                             macro avg       0.96      0.94      0.95        48
+                          weighted avg       0.96      0.96      0.96        48

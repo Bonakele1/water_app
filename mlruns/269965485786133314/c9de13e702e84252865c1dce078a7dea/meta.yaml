@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/269965485786133314/c9de13e702e84252865c1dce078a7dea/artifacts
+end_time: 1743940085991
+entry_point_name: ''
+experiment_id: '269965485786133314'
+lifecycle_stage: active
+run_id: c9de13e702e84252865c1dce078a7dea
+run_name: Random_Forest_Model
+run_uuid: c9de13e702e84252865c1dce078a7dea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743939906848
+status: 3
+tags: []
+user_id: bonas
