@@ -41,11 +41,11 @@ if section == "Prediction":
     pH = input_template['pH'] = st.sidebar.slider("pH Level", 0.0, 14.0, 7.0)
     conductivity = input_template['EC\n(µS/cm)'] = st.sidebar.slider("Conductivity (µS/cm)", 0.0, 5000.0, 1000.0)
     dissolved_oxygen = input_template['DO\n(mg/L)'] = st.sidebar.slider("Dissolved Oxygen (mg/L)", 0.0, 15.0, 7.0)
-    turbidity = input_template['Turbidity (NTU)'] = st.sidebar.slider("Turbidity (NTU)", 0.0, 100.0, 10.0)
+    turbidity = input_template['Turbidity (NTU)'] = st.sidebar.slider("Turbidity (NTU)", 0.0, 1000.0, 500.0)
     temp = input_template['Ambient temperature (°C)'] = st.sidebar.slider("Temperature (°C)", 0.0, 40.0, 25.0)
-    level = input_template['Level (cm)'] = st.sidebar.slider("Level (cm)", 0.0, 300.0, 100.0)
-    tss = input_template['TSS\n(mL sed/L)'] = st.sidebar.slider("TSS (mL sed/L)", 0.0, 100.0, 10.0)
-    total_cl = input_template['Total Cl-\n(mg Cl-/L)'] = st.sidebar.slider("Total Cl- (mg Cl-/L)", 0.0, 100.0, 20.0)
+    level = input_template['Level (cm)'] = st.sidebar.slider("Level (cm)", 0.0, 100.0, 50.0)
+    tss = input_template['TSS\n(mL sed/L)'] = st.sidebar.slider("TSS (mL sed/L)", 0.0, 700.0, 350.0)
+    total_cl = input_template['Total Cl-\n(mg Cl-/L)'] = st.sidebar.slider("Total Cl- (mg Cl-/L)", 0.0, 200.0, 100.0)
 
 
     # One-hot encoding for location
@@ -102,18 +102,23 @@ if section == "Prediction":
         input_filtered = input_template[expected_features]
 
         prediction = model.predict(input_filtered)[0]
-        Mapping = {
+        st.write("Raw prediction output:", prediction)
+
+        prediction_int = int(prediction)
+        
+        mapping = {
             0: "Excellent (Support Aquatic life)", 
             1: "Good (Acceptable to some Aquatic life)", 
             2: "Poor (Pollution)", 
             3: "Very Poor (Hypoxic)"
         }
-        result = mapping.get(prediction, "Unknown")
+        
+        result = mapping.get(prediction_int, "Unknown")
 
         st.success(f"Predicted Water Quality: {result}")
 
         st.write("### Input Summary")
-        st.dataframe(input_data)
+        st.dataframe(input_filtered)
 
 elif section == "About":
     st.info("This app predicts water quality based on parameters collected across different locations and times. The model used is a Random Forest classifier.")
