@@ -25,6 +25,7 @@ if section == "Prediction":
     
     model = load_model()
     preprocessed = load_template()
+    scaler = joblib.load("scaler.pkl")
 
     # Sidebar Inputs
     st.sidebar.header("Input Features")
@@ -93,18 +94,16 @@ if section == "Prediction":
     if st.button("Classify Water Quality"):
 
         # Ensure that the target column is removed from the input template
-        if "DO Classification encoded" in input_template.columns:
-            input_features = input_template.drop("DO Classification encoded", axis=1)
+        if "Classification encoded" in input_template.columns:
+            input_features = input_template.drop("Classification encoded", axis=1)
         else:
             input_features = input_template
 
-        expected_features = model.feature_names_in_
-        input_filtered = input_template[expected_features]
-
-        prediction = model.predict(input_filtered)[0]
+        input_scaled = scaler.transform(input_features)
+        prediction = model.predict(input_scaled)
         st.write("Raw prediction output:", prediction)
 
-        prediction_int = int(prediction)
+        prediction_int = int(prediction[0])
         
         mapping = {
             0: "Excellent (Support Aquatic life)", 
@@ -118,7 +117,7 @@ if section == "Prediction":
         st.success(f"Predicted Water Quality: {result}")
 
         st.write("### Input Summary")
-        st.dataframe(input_filtered)
+        st.dataframe(input_features)
 
 elif section == "About":
     st.info("This app predicts water quality based on parameters collected across different locations and times. The model used is a Random Forest classifier.")
