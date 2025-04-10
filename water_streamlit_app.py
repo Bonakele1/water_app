@@ -3,6 +3,29 @@ import pandas as pd
 import joblib
 import pickle
 
+st.markdown(
+    """
+    <style>
+    html, body, [data-testid="stApp"] {
+        height: 100%;
+        background-image: url("https://www.earth.com/assets/_next/image/?url=https%3A%2F%2Fcff2.earth.com%2Fuploads%2F2023%2F09%2F12105550%2FRiver-water-quality-1400x850.jpg&w=1200&q=75");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    /* Sidebar background */
+    [data-testid="stSidebar"] > div:first-child {
+        background-image: url("https://www.earth.com/assets/_next/image/?url=https%3A%2F%2Fcff2.earth.com%2Fuploads%2F2023%2F09%2F12105550%2FRiver-water-quality-1400x850.jpg&w=1200&q=75");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Load trained model
 st.title("Water Quality Predictor")
