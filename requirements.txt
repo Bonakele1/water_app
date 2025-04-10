@@ -1,6 +1,7 @@
 joblib
 pandas
+numpy
 streamlit
 ipython
 cython
-
+scikit-learn
