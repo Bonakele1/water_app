@@ -19,13 +19,14 @@ The dataset is comprised of river water quality data.
  You can find the `river_water_parameters.csv` datasets [here](https://www.google.com/url?q=https://www.kaggle.com/datasets/natanaelferran/river-water-parameters?select%3DRiver%2Bwater%2Bparameters.csv&sa=D&source=editors&ust=1744381141155687&usg=AOvVaw3e6sLkrseKwC-I2ibjPwN-).
 
 ## 3. Packages <a class="anchor" id="packages"></a>
-
+----------------------------------------------------
 |pandas             | Data manipulation and analysis
 |numpy              | Numerical operations
 |matplotlib         | Basic plotting
 |seaborn            | Statistical data visualization
 |scikit-learn       | ML models, metrics, preprocessing
 |streamlit          | Web app interface
+ -----------------------------------------------------
 
 ## 4. Environment <a class="anchor" id="environment"></a>
 
