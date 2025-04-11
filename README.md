@@ -20,12 +20,12 @@ The dataset is comprised of river water quality data.
 
 ## 3. Packages <a class="anchor" id="packages"></a>
 
-pandas             | Data manipulation and analysis
-numpy              | Numerical operations
-matplotlib         | Basic plotting
-seaborn            | Statistical data visualization
-scikit-learn       | ML models, metrics, preprocessing
-streamlit          | Web app interface
+|pandas             | Data manipulation and analysis
+|numpy              | Numerical operations
+|matplotlib         | Basic plotting
+|seaborn            | Statistical data visualization
+|scikit-learn       | ML models, metrics, preprocessing
+|streamlit          | Web app interface
 
 ## 4. Environment <a class="anchor" id="environment"></a>
 
